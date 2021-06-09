@@ -1,3 +1,8 @@
+:root {
+    --grid-rows: 1;
+    --grid-columns: 1;
+}
+
 html {
     background: #659DBD;
 }
@@ -15,14 +20,17 @@ div {
 
 #buttons {
     display: grid;
+    position: relative;
 }
 
 #clearBtn {
-    padding: 1vw;
+    
+    padding: 0.5em 1em;
     margin: auto;
     margin-bottom: 1.5vw;
-    background: white;
+    background:coral;
     border: none;
+    
 
 }
 
@@ -30,7 +38,7 @@ div {
     transform: scale(1.1);
     transform-origin: center;
     box-shadow: 0 0 25px black;
-    border: 1px solid black;
+    
     
 }
 
@@ -38,17 +46,22 @@ div {
     
     box-shadow: 0 0 25px black;
     border: 1px solid black;
-    transform: translateY(4px);
+    transform: translateY(1px) ;
+    
   }
 
 #container {
+    
     box-sizing: content-box;
     display: grid;
     margin: auto;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    /*grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);*/
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
     height: 55vw;
     width: 55vw;
+    
     border: 2px solid black;
 }
 
