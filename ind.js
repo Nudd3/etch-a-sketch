@@ -1,9 +1,7 @@
 const container = document.querySelector('#container');
+const darkerBtn = document.querySelector('#darkerBtn');
 const clearBtn = document.querySelector('#clearBtn');
-const blackBtn = document.querySelector('#blackBtn');
-const rainbowBtn = document.querySelector('#rainbowBtn');
 
-// Creates the grid
 function createGrid(squares) {
     for (let i = 0; i < (squares * squares); i++) {
         const div = document.createElement('div');
@@ -26,8 +24,6 @@ function delGrid() {
     container.innerHTML = "";
 }
 
-
-
 // Clears the grid and creates the new grid
 function clear() {
 
@@ -48,8 +44,6 @@ function clear() {
 
 }
 
-
-
 // Returns a random color
 function generateColor() {
 
@@ -62,35 +56,28 @@ function generateColor() {
 
 // Changes the color
 function randomColor() {
+
     this.style.backgroundColor = generateColor();
+    
     
 }
 
-function blackColor(){
+function ds(){
     this.style.backgroundColor = "#000";
 }
 
-function rainbow(){
-    var gridCells = document.querySelectorAll('.cell');
-    gridCells.forEach(cell => cell.removeEventListener('mouseenter', blackColor));
-    gridCells.forEach(cell => cell.addEventListener('mouseenter', randomColor));
-    
-}
-
-
-
 function darkerColors(){
+    if (this.style.backgroundColor.match(/rgba/)) {
+        console.log("Hello");
+    }
     var gridCells = document.querySelectorAll('.cell');
-    gridCells.forEach(cell => cell.removeEventListener('mouseenter', randomColor));
-    gridCells.forEach(cell => cell.addEventListener('mouseenter', blackColor));
+    gridCells.forEach(cell => cell.addEventListener('mouseenter', ds));
 }
-
 
 // Default grid
 sizingGrid(16);
 createGrid(16);
 
-// Event listeners
 clearBtn.addEventListener('click', clear);
-blackBtn.addEventListener('click', darkerColors);
-rainbowBtn.addEventListener('click', rainbow);
+darkerBtn.addEventListener('click', darkerColors);
+

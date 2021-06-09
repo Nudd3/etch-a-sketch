@@ -3,7 +3,9 @@
     --grid-columns: 1;
 }
 
+
 html {
+    font-family: 'Liu Jian Mao Cao', cursive;
     background: #659DBD;
 }
 
@@ -12,57 +14,68 @@ div {
 }
 
 #title {
-    font-family: 'Liu Jian Mao Cao', cursive;
     color: #BC986A;
     text-align: center;
     font-size: 3.5em;
 }
 
 #buttons {
-    display: grid;
-    position: relative;
+    background: red;
 }
 
 #clearBtn {
     
-    padding: 0.5em 1em;
+    position: absolute;
+    padding: 0.5em 1.5em;
+    left: 0;
+    right: 0;
     margin: auto;
-    margin-bottom: 1.5vw;
-    background:coral;
+    background: coral;
     border: none;
-    
-
+    color: #fff;
 }
 
-#clearBtn:hover{
+#clearBtn:hover {
     transform: scale(1.1);
     transform-origin: center;
     box-shadow: 0 0 25px black;
-    
-    
+    color:#000;
 }
 
 #clearBtn:active {
-    
     box-shadow: 0 0 25px black;
     border: 1px solid black;
-    transform: translateY(1px) ;
+    transform: translateY(4px);
+    color: #000;
+}
+
+#blackBtn{
     
-  }
+    
+    padding: 0.5em 1.5em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: coral;
+    border: none;
+    color: #fff;
+}
 
 #container {
-    
     box-sizing: content-box;
     display: grid;
     margin: auto;
+    margin-top: 50px;
     /*grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);*/
     grid-template-columns: repeat(var(--grid-columns), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     height: 55vw;
     width: 55vw;
-    
     border: 2px solid black;
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -40px; 
 }
 
 .cell {
@@ -85,3 +98,4 @@ div {
 .craft {
     color: #FFF547;
 }
+
