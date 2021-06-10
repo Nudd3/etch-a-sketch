@@ -10,10 +10,6 @@ function createGrid(squares) {
         div.classList.toggle('cell');
         container.appendChild(div);
     }
-
-    // Add eventlisteners to the cells in the grid
-    var gridCells = document.querySelectorAll('.cell');
-    gridCells.forEach(cell => cell.addEventListener('mouseenter', randomColor));
 }
 
 function sizingGrid(squares) {
@@ -63,23 +59,23 @@ function generateColor() {
 // Changes the color
 function randomColor() {
     this.style.backgroundColor = generateColor();
-    
+
 }
 
-function blackColor(){
+function blackColor() {
     this.style.backgroundColor = "#000";
 }
 
-function rainbow(){
+function rainbow() {
     var gridCells = document.querySelectorAll('.cell');
     gridCells.forEach(cell => cell.removeEventListener('mouseenter', blackColor));
     gridCells.forEach(cell => cell.addEventListener('mouseenter', randomColor));
-    
+
 }
 
 
 
-function darkerColors(){
+function darkerColors() {
     var gridCells = document.querySelectorAll('.cell');
     gridCells.forEach(cell => cell.removeEventListener('mouseenter', randomColor));
     gridCells.forEach(cell => cell.addEventListener('mouseenter', blackColor));
